@@ -1,8 +1,7 @@
 # Swiss Bracket Manager
-Tool for aiding in the management of Swiss tournaments on Smogon.
+[Webtool](https://shinyfinder.github.io/swiss-bracket-manager/) for aiding in the management of Swiss tournaments on Smogon.
 
 # Installation
-This code assumes you have v.16.9.0 or later installed of [NodeJs](https://nodejs.org/en/). Please install or update that first before proceeding.
 
 Obtain a copy of the source code by downloading the [zip](./archive/refs/heads/main.zip) of the repository or, if you have git installed, via the command line in your desired destination folder:
 
