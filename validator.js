@@ -281,6 +281,8 @@ function updateWL() {
 
     // get the list of winners
     let providedWinners = document.getElementById('winLossBox').value.split(/[\r?\n]+/);
+    // remove blank entries
+    providedWinners = providedWinners.filter(winner => winner);
 
     // check if blank
     if (providedWinners == '') {
@@ -292,6 +294,12 @@ function updateWL() {
     const hasOldMatchups = compareMatches();
     if (hasOldMatchups == true) {
         alert('There are duplicate matchups! Please remove them before proceeding.');
+        return;
+    }
+
+    // make sure each match has a winner
+    if (providedWinners.length != providedNamesList.length / 2) {
+        alert('Each matchup needs a winner!');
         return;
     }
 
