@@ -216,10 +216,10 @@ function compareMatches() {
     // if we have saved pairs, check to see if any of the entries are the same
     if (bracket.pairs) {
         // create a temp array that concats the info saved with that provided
-        const pairCompArr = providedNames.concat(bracket.pairs);
+        const pairCompArr = providedNames.concat(bracket.pairs);  
         
         // check for any duplicated entries by first getting all of the unique entries
-        const uniq = pairCompArr.filter((a = {}, b => !(a[b] = b in a)));
+        const uniq = pairCompArr.filter((a = {}, b => !(a[b] = b in a || b.slice().reverse() in a)));
 
         // then checking if the lengths match
         // if they don't, there's a duplicated matchup
@@ -291,7 +291,7 @@ function updateWL() {
     // check to make sure there are no duplicated matchups
     const hasOldMatchups = compareMatches();
     if (hasOldMatchups == true) {
-        alert('There are duplicated matchups! Please remove them before proceeding');
+        alert('There are duplicate matchups! Please remove them before proceeding.');
         return;
     }
 
@@ -411,6 +411,17 @@ function findDuplicates(array) {
             results.push(sortedArr[i]);
         }
     }
+
+    // check for duplicates
+    for (let i = 0; i < sortedArr.length; i++) {
+        for (let j = i; j < sortedArr.length; j++) {
+            if (sortedArr[i][0] == sortedArr[j][1] && sortedArr[i][1] == sortedArr[j][0]) {
+                results.push(sortedArr[i]);
+                sortedArr.splice(j,1);
+            }
+        }
+    }
+
     return results;
 }
 
@@ -443,7 +454,8 @@ function findDuplicates(array) {
  */
  function parseBM() {
     // get the input
-    const providedNames = document.getElementById('inputBox').value.split(/[\r?\n]+/);
+    let providedNames = document.getElementById('inputBox').value.split(/[\r?\n]+/);
+    providedNames = providedNames.filter(match => match);
 
     // loop over the input to match the regex of the names
     const participants = [];

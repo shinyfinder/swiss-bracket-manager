@@ -70,7 +70,7 @@
     <p>Go to <a href="./index.html">Manager</a></p>
     <button onclick="toggleDark()" type="button" id="darkModeBtn">Toggle dark mode</button>
     <h2>Validate Brackets</h2>
-    <p>This page is used to check brackets made in Smogon's <a href="https://www.smogon.com/bracketmaker/" target="_blank">bracket maker</a> for duplicated matchups to aid in Swiss tournaments. Participants' records are stored locally and printed to aid in tournament management.</p>
+    <p>This page is used to check brackets made in Smogon's <a href="https://www.smogon.com/bracketmaker/" target="_blank">bracket maker</a> for duplicated matchups to aid in Swiss tournament management. Participants' records are stored locally so they can be grouped and printed each round.</p>
     <p>Enter the name for a new bracket, or select a saved bracket from the dropdown to load.</p>
     <div id="manage-bracket">
         <form id="newBracket">
@@ -92,7 +92,7 @@
     
     <div id="pageContent">
         <h2>Current Bracket: <span id='curBrackName'></span></h2>
-        <p>Paste the output from the <a href="https://www.smogon.com/bracketmaker/" target="_blank">bracket maker</a> into the field on the left below. Please enter the names of the winners, each on their own line, in the box on the right. To store a record of the matches played, there cannot be any duplicated matchups. However, you may check for duplicated matchups at any time.</p>
+        <p>Paste the output from the <a href="https://www.smogon.com/bracketmaker/" target="_blank">bracket maker</a> into the field on the left below. Please enter the names of the winners, each on their own line, in the box on the right. To store a record of the matches played, there cannot be any duplicate matchups. However, you may check for duplicated matchups at any time.</p>
         <p>In the case of extensions, remember to enter the extension matchup in the matchups box. Don't forget to update any old matchups based on the winner of the extension! If the player won their extension and subsequent match for the current round, enter their name in the winner field twice. Names not present in the winners field are assumed to have lost. As an example, let's say the current round is (Winner of A vs B) vs C and (Loser of A vs B) vs D. This represents 3 matches: A vs B, A/B vs C, and A/B vs D. All matches are played and A wins the extension, as well as their subsequent match vs C. Player B prevails over player D. To log the matches played, the matches box should have the following entries: A vs B; A vs C; B vs D. The winners field should have A; A; B. The syntax here is for illustrative purposes. See paragraph above for proper syntax.</p>
         <div class="row">
             <div class="column">
